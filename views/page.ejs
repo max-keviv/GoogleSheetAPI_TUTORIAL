@@ -1,0 +1,38 @@
+<%- include("top") -%>
+    <div>
+        <form action="\" method="POST">
+
+            <button class="btn btn-outline-danger search" name="add" type="button">Add Item</button>
+            <button class="btn btn-outline-dark place" name="save" type="submit">Save</button>
+
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">S.no</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (const i in (items)) { j=1%>
+                            <tr>
+                                <th scope="row">
+                                    <%- i %>
+
+                                </th>
+                                <td>
+                                    <%- items[i].name %>
+                                </td>
+                                <td>
+                                    <%- items[i].link %>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+    <%- include("end") -%>
