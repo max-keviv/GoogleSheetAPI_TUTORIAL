@@ -7,6 +7,7 @@ const https = require("https");
 const ejs = require("ejs");
 const fs = require('fs');
 const exceljs = require('exceljs');
+const { stringify } = require("querystring");
 app.set('view engine', 'ejs');
 app.use("/", express.static(__dirname));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -35,6 +36,14 @@ app.post('/PartA/save', (req, res, next) => {
     xlsx.writeFile(newWB, './src/saveExcel.xlsx')
     console.log("file written")
     res.redirect('/PartA');
+})
+
+app.post('/PartB/delete',(req,res)=>{
+    const id = req.body.id;
+	console.log(id);
+    delete items[id];
+    console.log(items)
+	res.send("/PartA")
 })
 
 app.get("/partB", (req, res) => {

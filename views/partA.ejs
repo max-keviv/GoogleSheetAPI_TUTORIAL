@@ -10,6 +10,7 @@
                         <th scope="col">S.no</th>
                         <th scope="col">Name</th>
                         <th scope="col">Link</th>
+                        <th scope="col">Remove</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,6 +25,10 @@
                             </td>
                             <td>
                                 <%- items[i].link %>
+                            </td>
+                            <td>
+                            
+                            <button class="delete" id="<%-i%>" class="btn">&#x1f5d1;</button>
                             </td>
                         </tr>
                         <% } %>
