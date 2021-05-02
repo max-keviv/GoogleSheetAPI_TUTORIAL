@@ -1,38 +1,12 @@
 <%- include("top") -%>
-    <div>
-        <form action="\" method="POST">
+<div class="container text-center col">
+    <form action="/PartA" method="GET">
 
-            <button class="btn btn-outline-danger search" name="add" type="button">Add Item</button>
-            <button class="btn btn-outline-dark place" name="save" type="submit">Save</button>
-
-
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">S.no</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Link</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% for (const i in (items)) { j=1%>
-                            <tr>
-                                <th scope="row">
-                                    <%- i %>
-
-                                </th>
-                                <td>
-                                    <%- items[i].name %>
-                                </td>
-                                <td>
-                                    <%- items[i].link %>
-                                </td>
-                            </tr>
-                            <% } %>
-                    </tbody>
-                </table>
-            </div>
-        </form>
-    </div>
-    <%- include("end") -%>
+        <div  class="pt-5 mt-5 col p-4"><button href="/PartA/" type="submit" class="btn btn-outline-dark btn-lg"> PART A </button>
+        </div></form>
+        <form action="/PartB" method="GET">
+            <div class="col p-4">
+        <button href="/PartB/" type="submit" class="btn btn-outline-warning btn-lg"> PART B </button></div>
+</form>
+</div>
+<%- include("end") -%>
