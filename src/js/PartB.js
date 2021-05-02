@@ -5,10 +5,8 @@ $(function () {
         const body = $('#inputText').val()
         const url = $('#selectUser').val()
         const user = $('#selectUser option:selected').text()
-        // console.log(user)
         const isaddThanks = document.getElementById("addThanks").checked == true
         const isaddDate = document.getElementById("addDate").checked == true
-        // console.log(name + " " + body + " " + user);
         const dataobj = new Date()
         let todayDate
         if (isaddDate)
