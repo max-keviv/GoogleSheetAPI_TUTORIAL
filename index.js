@@ -43,6 +43,7 @@ app.post('/PartB/delete',(req,res)=>{
 	console.log(id);
     delete items[id];
     console.log(items)
+    console.log("length:"+items.length)
 	res.send("/PartA")
 })
 

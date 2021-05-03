@@ -37,7 +37,7 @@
         </div>
 
         <form action="/PartA/addnamelink" method="POST" id="formID" class="form-inline">
-            <div class="form-group">
+            <div class="mt-5 pt-5 form-group">
                 <div class="form-group mb-2">
                     <label for="inputName" class="sr-only">Name</label>
                     <input required id="inputName" type="text" name="add_name" placeholder="Name" class="form-control">
@@ -46,13 +46,20 @@
                     <label for="inputLink" class="sr-only">Url</label>
                     <input required id="inputLink" type="url" name="add_link" placeholder="Link" class="form-control">
                 </div>
-                <button class="btn btn-outline-danger mb-2" name="addbutton" type="submit">Add
+                <button class="btn btn-outline-success mb-2" name="addbutton" type="submit">Add
                     Item</button>
             </div>
         </form>
+        <div class="col">
+        <div class="row">
         <form action="/PartA/save" method="POST" id="saveForm">
-            <button class="btn btn-outline-dark place" name="save" type="submit">Save</button>
+            <button class="btn btn-block btn-outline-warning place mr-5" name="save" type="submit">Save</button>
         </form>
-
     </div>
+    <div class="row pt-2" >
+        <div>
+        <button id="download" class="btn btn-block btn-outline-primary mr-2">Download</button>
+    </div></div>
+</div>
+</div>
     <%- include("end") -%>
