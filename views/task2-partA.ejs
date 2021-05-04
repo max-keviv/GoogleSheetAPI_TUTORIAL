@@ -1,0 +1,57 @@
+<%- include("task2-top") -%>
+
+    <div class="container pt-2 overflow-auto">
+        <div class=" text-right pb-2"><a class="btn btn-outline-warning btn-sm " href="/task2/partB">PartB ➜</a></div>
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">S.no</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (const i in (items)) { j=1%>
+                        <tr>
+                            <th scope="row">
+                                <%- i %>
+
+                            </th>
+                            <td>
+                                <%- items[i][0] %>
+                            </td>
+                            <td>
+                                <%- items[i][1] %>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </div>
+
+        <form action="/task2/PartA/save" method="POST" id="formID" class="form-inline">
+            <div class="mt-5 pt-5 form-group">
+                <div class="form-group mb-2">
+                    <label for="inputName" class="sr-only">Name</label>
+                    <input required id="inputName" type="text" name="add_name" placeholder="Name" class="form-control">
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="inputLink" class="sr-only">Url</label>
+                    <input required id="inputLink" type="url" name="add_link" placeholder="Link" class="form-control">
+                </div>
+                <button class="btn btn-outline-success mb-2" name="addbutton" type="submit">Save</button>
+            </div>
+        </form>
+        <div class="col">
+        <div class="row">
+        
+    </div>
+    <div class="row pt-2" >
+        <div>
+        <button id="download" class="btn btn-block btn-outline-primary mr-2">Google sheet</button>
+    </div></div>
+</div>
+</div>
+    <%- include("end") -%>
