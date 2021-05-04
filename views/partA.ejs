@@ -1,6 +1,7 @@
 <%- include("top") -%>
 
-    <div class="container pt-4 overflow-auto">
+    <div class="container pt-2 overflow-auto">
+        <div class=" text-right pb-2"><a class="btn btn-outline-warning btn-sm " href="/partB">PartB ➜</a></div>
 
 
         <div class="table-responsive">
@@ -36,7 +37,7 @@
             </table>
         </div>
 
-        <form action="/PartA/addnamelink" method="POST" id="formID" class="form-inline">
+        <form action="/PartA/save" method="POST" id="formID" class="form-inline">
             <div class="mt-5 pt-5 form-group">
                 <div class="form-group mb-2">
                     <label for="inputName" class="sr-only">Name</label>
@@ -46,15 +47,12 @@
                     <label for="inputLink" class="sr-only">Url</label>
                     <input required id="inputLink" type="url" name="add_link" placeholder="Link" class="form-control">
                 </div>
-                <button class="btn btn-outline-success mb-2" name="addbutton" type="submit">Add
-                    Item</button>
+                <button class="btn btn-outline-success mb-2" name="addbutton" type="submit">Save</button>
             </div>
         </form>
         <div class="col">
         <div class="row">
-        <form action="/PartA/save" method="POST" id="saveForm">
-            <button class="btn btn-block btn-outline-warning place mr-5" name="save" type="submit">Save</button>
-        </form>
+        
     </div>
     <div class="row pt-2" >
         <div>

@@ -16,20 +16,25 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 
+// const wb = xlsx.readFile('./src/saveExcel.xlsx')
+// const ws=wb.Sheets["Sheet1"];
+let items;
+
+app.get("/PartA", (req, res) => {
+    
 const wb = xlsx.readFile('./src/saveExcel.xlsx')
 const ws=wb.Sheets["Sheet1"];
-const items=xlsx.utils.sheet_to_json(ws);
-app.get("/PartA", (req, res) => { res.render("partA", { items: items }) })
+ items=xlsx.utils.sheet_to_json(ws);
+ console.log(items)
+    res.render("partA", { items: items }) 
+    })
 
-app.post("/PartA/addnamelink", (req, res, next) => {
-    items.push({ name: req.body.add_name, link: req.body.add_link });
-    res.redirect('/partA');
-})
 
 
 app.get("/", (req, res) => { res.render("page")})
 
 app.post('/PartA/save', (req, res, next) => {
+    items.push({ name: req.body.add_name, link: req.body.add_link });
     const newWB=xlsx.utils.book_new();
     const newWS=xlsx.utils.json_to_sheet(items);
     xlsx.utils.book_append_sheet(newWB,newWS,"Sheet1");
